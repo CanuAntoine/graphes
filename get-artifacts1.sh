@@ -20,7 +20,7 @@ for id_json in $(cat liste-id.txt); do
         https://api.github.com/repos/CanuAntoine/graphes/actions/artifacts/$id_json/zip \
         --output $id_json/artifact.zip
 
-    # L'option -d permet d'indiquer le repo de dest
-    unzip -d $id_json $id_json/artifact.zip 
+    # L'option -d permet d'indiquer le repo de dest / -o permet l'écrasement auto des fichier
+    unzip -o -d $id_json $id_json/artifact.zip 
 
 done
